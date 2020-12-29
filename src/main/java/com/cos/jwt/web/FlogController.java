@@ -43,7 +43,7 @@ public class FlogController {
 	}
 	
 	
-	@GetMapping("/floglist") //블로그 목록
+	@GetMapping("/flogList") //블로그 목록
 	public Page<Flog> flogList(@PageableDefault(size = 10, sort = "fno", direction = Direction.DESC) Pageable pageable){
 		Page<Flog> flogs = flogService.블로그목록(pageable);
 		return flogs;
@@ -101,7 +101,6 @@ public class FlogController {
 	    return "ok";
 	}
 	*/
-	
 
 	//블로그 신청
 	
@@ -111,7 +110,6 @@ public class FlogController {
 		
 		flogService.블로그신청(access);
 		return "ok";
-		
 	}
 
 }

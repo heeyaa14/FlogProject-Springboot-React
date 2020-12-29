@@ -150,7 +150,6 @@ const AccessListBox = styled.div`
 `;
 
 
-
 const Status = () => {
     
     JSON.parse(localStorage.getItem("user"));
@@ -182,18 +181,18 @@ const Status = () => {
             
         fetch("http://localhost:8000/user/"+user.username, {
             method: "GET",
-         headers:{
-                "Authorization": localStorage.getItem("Authorization")
-         }
+            headers:{
+                    "Authorization": localStorage.getItem("Authorization")
+            }
       }).then(res=>res.json()).then(res=>{
             setUpdateUser(res); 
         });
 
         fetch("http://localhost:8000/access/"+user.flog.fno,{
             method: "GET",
-         headers:{
-                "Authorization": localStorage.getItem("Authorization")
-         }
+            headers:{
+                    "Authorization": localStorage.getItem("Authorization")
+            }
         }).then(res=> res.json()).then(res=>{
             setAccesses(res);
         })
@@ -204,7 +203,7 @@ const Status = () => {
     
     const [members, setMembers] = useState([]);
 
-    //setMembers(user.flog.member); 
+    setMembers(user.flog.member); 
     console.log(user.flog.member);
     
     const changeValue = (e)=> {
@@ -248,11 +247,11 @@ const Status = () => {
         var userStatusOut = document.querySelector("#userStatusOut");
         console.log("요청리스트 확인중:",accesses);
 
-        if(userStatusOut.style.display=="none"){
+        if(userStatusOut.style.display==="none"){
         userStatusOut.style.display="grid";
         alert("프로필을 수정해보세요!");
         alert("프로필을 다시 클릭하시면 저장됩니다!");
-         }else if(userStatusOut.style.display=="grid"){
+         }else if(userStatusOut.style.display==="grid"){
         userStatusOut.style.display="none";
 
         let form = document.getElementById("form2");

@@ -135,7 +135,7 @@ const BoardList = (props, {bno, content, title, reg_date}) => {
 
 
     // flogList 페이징해서 화면에 표시.
-        fetch("http://localhost:8000/boardlist?page="+page, {
+        fetch("http://localhost:8000/boardList?page="+page, {
             method: "GET"
         }).then(res => res.json())
             .then(res => {

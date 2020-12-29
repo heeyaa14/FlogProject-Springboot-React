@@ -53,7 +53,7 @@ public class FlogService {
 			String flog_imgname = flog_img.getOriginalFilename();
 			String uploadFilename = uuid.toString() + "_" + flog_imgname;
 			File dest = new File(
-					"C:\\Users\\admin\\git\\flog\\src\\main\\wepapp\\blog-app\\public\\images\\flogimages\\"
+					"C:\\Users\\qkffp\\git\\Flog-React-SptringBoot-Project\\src\\main\\wepapp\\blog-app\\public\\images\\flogimages\\"
 							+ uploadFilename);
 			flog_img.transferTo(dest);
 			// TODO
@@ -126,12 +126,6 @@ public class FlogService {
 	public Flog 블로그상세보기(Pageable pageable,int fno){
 		return flogRepository.findById(fno).get();
 	}
-	
-//	@Transactional
-//	public void 최신블로그(int mno) {
-//	     int fno = flogRepository.FindLastFno();
-//	     memberRepository.UpdateFnoBymno(mno, fno);
-//	}
 
 	// 블로그 신청
 	@Transactional
@@ -143,6 +137,7 @@ public class FlogService {
 	public void 블로그삭제(int fno) {
 		flogRepository.deleteByFno(fno);
 	}
+
 }
 
 /*

@@ -38,11 +38,9 @@ function App() {
 
   useEffect(()=> {
     let jwtToken = localStorage.getItem("Authorization");
-    /*
     if (jwtToken === null) {
       dispatch(login());
     }
-    */
 
     const loggedInfo = JSON.parse(localStorage.getItem("user"));
     if(!loggedInfo) return;
@@ -59,8 +57,8 @@ function App() {
     </AppTitleStyle>
     <Route path="/join" exact={true} component={Join}></Route>
     <Route path="/login" exact={true} component={Login}></Route>
-    <Route path="/floglist" exact={true} component={FlogList}></Route>
-    <Route path="/boardlist" exact={true} component={BoardList}></Route>
+    <Route path="/flogList" exact={true} component={FlogList}></Route>
+    <Route path="/boardList" exact={true} component={BoardList}></Route>
     <Route path="/flog/:fno" exact={true} component={FlogList}></Route>
     <Route path="/updateForm/:bno" exact={true} component={UpdateForm}></Route>
     <Route path="/boardForm" exact={true} component={BoardForm}></Route>
